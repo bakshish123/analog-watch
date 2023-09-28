@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
+import './AnalogWatch.css'
 function AnalogWatch() {
   const [time, setTime] = useState(new Date());
 
@@ -20,39 +20,31 @@ function AnalogWatch() {
   const hourDegrees = ((hours + minutes / 60) / 12) * 360;
 
   const secondHandStyle = {
-    transform: `rotate(${90 + secondDegrees}deg)`,
+    transform: `rotate(${secondDegrees}deg)`,
   };
 
   const minuteHandStyle = {
-    transform: `rotate(${90 + minuteDegrees}deg)`,
+    transform: `rotate(${minuteDegrees}deg)`,
   };
 
   const hourHandStyle = {
-    transform: `rotate(${90 + hourDegrees}deg)`,
+    transform: `rotate(${hourDegrees}deg)`,
   };
 
   return (
-    <div className="w-64 h-64 relative border-4 border-gray-400">
-      {/* Clock Face */}
-      <div className="w-full h-full border-4 border-gray-700 rounded-full absolute top-0 left-0 transform translate-x-1/2 translate-y-1/2"></div>
-
-      {/* Hour Hand */}
-      <div
-        className="h-1/2 w-2 bg-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-full origin-bottom"
-        style={hourHandStyle}
-      ></div>
-
-      {/* Minute Hand */}
-      <div
-        className="h-1/2 w-1 bg-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-full origin-bottom"
-        style={minuteHandStyle}
-      ></div>
-
-      {/* Second Hand */}
-      <div
-        className="h-1/2 w-1 bg-red-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-full origin-bottom"
-        style={secondHandStyle}
-      ></div>
+    <div className="h-screen w-screen flex justify-center items-center">
+      <div className="flex justify-center items-center border-4 rounded-full h-[350px] w-[350px] border-black">
+      <h1 className="text-black text-[150px] top-[240px] absolute m-0 p-0">.</h1>
+        <div className="second's-hand h-[350px]" style={secondHandStyle}>
+          <div className="border-2 border-red-700 h-[175px] m-0 p-0"></div>
+        </div>
+        <div className="minute's-hand h-[300px]" style={minuteHandStyle}>
+          <div className="border-2 border-black h-[150px] m-0 p-0"></div>
+        </div>
+        <div className="hour's-hand h-[240px]" style={hourHandStyle}>
+          <div className="border-2 border-black h-[120px] m-0 p-0"></div>
+        </div>
+      </div>
     </div>
   );
 }
