@@ -38,6 +38,7 @@ function AnalogWatch() {
         <div className="second's-hand h-[350px]" style={secondHandStyle}>
           <div className="border-2 border-red-700 h-[175px] m-0 p-0"></div>
         </div>
+        {/* A small change by dhanraj */}
         <div className="minute's-hand h-[300px]" style={minuteHandStyle}>
           <div className="border-2 border-black h-[150px] m-0 p-0"></div>
         </div>
